@@ -1,0 +1,9 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# pytest cache
+.pytest_cache/
+
+# Test coverage reports
+.coverage
