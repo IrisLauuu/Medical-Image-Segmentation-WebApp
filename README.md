@@ -1,72 +1,93 @@
-# capstone-project-2024-t3-9900-W17A_CHOCOLATE
+# Medical Image Segmentation Web App
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Background
 
-## Available Scripts
+Medical image segmentation is a powerful tool that combines medical imaging and computer vision to analyze complex medical images. It helps identify important structures and abnormalities in images, which is essential for accurate diagnoses and effective treatment planning.
 
-In the project directory, you can run:
+## Main Features
+### 1. Specialized Segmentation Models With Attention Mechanism:
+● Skin Lesion Segmentation: Helps outline skin lesions for dermatological analysis.
 
-### `npm start`
+● Multi-Organ Nuclei Segmentation: Highlights cell nuclei in images from
+multiple organs for research or diagnosis.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Model Selection:
+Use the drop-down menu to select the desired segmentation type
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Upload Images or Select Default Images
+Uploaded images are processed and presented alongside each of the segmented results respectively for visual comparison.
 
-### `npm test`
+### 4. Model Performance Metrics Display
+On the segmentation result page, metrics including accuracy, Dice coefficients
+and IoU scores for evaluating the performance of the model specific to the
+selected task, and the processing times for each segmented image are provided.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Additional User-Driven Features
+The system offers a detailed user manual with usage instructions and related research links, plus a simple interface for user feedback and issue reporting.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
+This project is fully dockerized for easy setup and usage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
+```bash
+git clone https://github.com/IrisLauuu/Medical-Image-Segmentation-WebApp.git
+```
+2. **Navigate to the project folder.**
+3. **Build and run the Docker containers:**
+```bash
+docker compose up --build
+```
+4. **Access the application:**
+Once the build completes, open your browser and go to http://localhost:3000 to use the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The landing page of web application:
 
-### `npm run eject`
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d0836c75-4fdd-42e9-ae08-00b1fc820e90" />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Troubleshooting
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you encounter an error related to EmailJS not working during the Docker build process, the Docker cache may need to be cleared.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Method 1: Clear Docker Cache
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run the following commands in your terminal:
 
-## Learn More
+```bash
+docker system prune -af
+docker compose up --build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Method 2: Manual Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If the Dockerized application does not run properly, you can manually install and run the backend and frontend:
 
-### Code Splitting
+**Backend**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Navigate to the backend directory.
+2. Install required Python packages:
+```bash
+pip install torch
+pip install -r requirements.txt
+```
+3. Run the backend server:
+```bash
+python3 server.py
+```
+or
+```bash
+python server.py
+```
+**Frontend**
+1. Navigate to the frontend directory.
+2. Install npm dependencies:
+```bash
+npm install
+```
+3. Start the frontend app:
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
